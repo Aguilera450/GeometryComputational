@@ -1,0 +1,32 @@
+\textbf{4.} Diseña un algoritmo para encontrar la envolvente convexa de un polígono monótono
+en tiempo lineal. Un polígono $P$ es monótono respecto a una línea $\ell$ si cualquier
+línea perpendicular a $\ell$ intersecta a $P$ en a lo más dos puntos. Puedes suponer que
+se conoce $\ell$. \newline
+
+\textbf{\textit{Solución.}} Este problema nos da información extra y valiosa. Esto nos permite modificar el algoritmo
+de \code{Graham} para encontrar un orden respecto a los puntos de $P$ en tiempo lineal y reducir nuestra complejidad.
+A continuación, se exhibe el algoritmo requerido
+\begin{enumerate}
+\item Encontremos un punto distinguido $p_0$ tal que sea el más ``chico'' respecto $X$ o $Y$, por simplicidad este algoritmo asume
+  que $p_0$ es el más ``chico'' con respecto a $Y$. Esto lo encontramos en $\mathcal{O}(n)$.
+\item Obtener un orden para poder recorrer. Aprovechando la $\ell$-monotonía de nuestro polígono, proyectemos cada punto en $\ell$
+  por medio de una transformación $T: (v \in P) \rightarrow (v' \in \ell)$. Por tanto, cada proyección nos toma $\mathcal{O}(1)$,
+  como debemos proyectar los $n$ puntos en $P$ entonces gastamos $\mathcal{O}(n)$. \newline
+  
+  Ahora, recorramos $\ell$ (que ya contiene las proyecciones hechas a los puntos en $P$) por medio de las proyecciones y finalmente
+  obtenemos un orden. Esto nos toma nuevamente $\mathcal{O}(n)$.\newline
+  
+  \textbf{Obs.} ¿Qué pasa si existen $u, v \in P$ tal que $T(u) = T(v)$? La respuesta es un poco sencilla, pues basta con encontrar
+  las proyecciones superior e inferior y guardar dos ordenes en cuanto a las proyecciones\footnote{ Esto lo decidimos con la coordenada no involcrada
+  en cada de ($X, Y, \ell$)-monotonía y para $\pi$-monotonía tomamos como parámetro su radio.}, lo cuál es trivial de obtener al crear una paralela
+  a $\ell$, digamos $\ell$' tal que $P$ quede entre la manga formada por $\ell$ y $\ell$'. Así, realizamos proyecciones en cada recta (respecto a la
+  cota de inferior y superior respecto de $\ell$), recorremos, y obtenemos un orden que podemos fusionar en $\mathcal{O}(1)$. Concluímos que este
+  paso tiene complejidad en $2 \cdot \mathcal{O}(n)$.
+\item Por último recorremos el orden en sentido contrario de las manecillas del reloj y recorremos hacia la izquierda, siempre, verificando las
+  direcciones de vuelta. Pues no queremos vueltas a la derecha. Como cada punto conoce a su vecino (por el orden), esto lo podemos hacer en
+  $\mathcal{O}(1)$. Como debemos hacer esto para cada punto, nos toma una complejidad contenida en $\mathcal{O}(n)$. En cada iteración formamos
+  una arista y la guardamos, eventualmente llegaremos a $p_0$ que es desde dónde inicia nuestro algoritmo.
+\end{enumerate}
+
+\textit{Análisis de complejidad.} Este algoritmo tiene una complejidad en
+\[\therefore \mathcal{O}(n) + 2 \cdot \mathcal{O}(n) + \mathcal{O}(n) = 3 \cdot \mathcal{O}(n) \in \mathcal{O}(n).\]

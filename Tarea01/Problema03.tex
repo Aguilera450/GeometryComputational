@@ -1,0 +1,26 @@
+\textbf{3.} Dado un conjunto de puntos $S$ diseña un algoritmo que encuentre un polígono simple
+cuyos vértices sean el conjunto $S$. \newline
+
+\textbf{\textit{Solución.}} Para el diseño de este algoritmo tomaremos como base el algoritmo \code{Graham}
+visto en clase, así, exhibamos el algoritmo
+\begin{enumerate}
+\item Primero debemos encontrar un punto distinguido $p_0$. Este punto puede ser cualquier punto y aquí nos podemos preguntar
+  ¿Por qué cualquier punto? La respuesta es simple, todos los puntos serán parte de nuestro polígono y por tanto no da exactamente
+  igual con cuál iniciar. Este paso tiene una complejidad contenida en $\mathcal{O}(1)$.
+\item Ahora obtengamos un orden angular respecto a $p_0$, esto nos toma $\mathcal{O}(n \log_{2} n)$ por la cota de ordenamiento
+  por comparaciones existente.
+\item Ahora que ya tenemos un orden angular y un punto por el cuál iniciar, recorramos nuestros puntos tomando como siguiente, siempre,
+  al próximo en el orden (así creamos una arista en cada iteración en el recorrido y lo guardamos, digamos en una lista) en sentido
+  contrario a las manecillas del reloj\footnote{¿Esto necesario? No, es necesario ir en algún orden. No necesariamente este, sin embargo
+  este orden es suficiente.}. Esto nos simplifica el detalle de conocer nuestras direcciones (validar) para poder regresar en caso de un
+  giro en sentido contrario al requerido en \code{Graham}. Esto nos toma la cantidad de puntos en $S$, por tanto tenemos un orden
+  $\mathcal{O}(n)$. Eventualmente llegaremos a $p_0$ y es en este momento que nuestro algoritmo termina regresando las aristas encontradas
+  durante el recorrido.
+\end{enumerate}
+
+¿Por qué será cierto que nuestro algoritmo no encuentra aristas que se intersecten? Por el orden encontrado en ($2$).
+\newline
+
+\textit{Análisis de complejidad.} nuestro algoritmo tiene una complejidad en
+\[\therefore \mathcal{O}(1) + \mathcal{O}(n \log_{2} n) + \mathcal{O}(n) \in \mathcal{O}(n \log_2 n).\]
+
