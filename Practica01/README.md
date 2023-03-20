@@ -2,6 +2,16 @@
 Práctica 01. Implementación del algoritmo EXTREME POINTS para encontrar la envolvente convexa de una nube de puntos.
 
 La realización de esta práctica fue pensada en una implementación para concursos de programación competitiva, así que no se siguieron buenas prácticas de programación.
+## Ejecución:
+Se da una nube de puntos, en este caso 10 puntos que se encuentran en el archivo: `puntos.txt`.
+
+![Nube de puntos.](./NubePuntos.png)
+
+Se ejecuta el algoritmo EXTREME POINTS y se genera el siguiente cierre convexo:
+
+![Envolvente convexa de puntos.](./CierreConvexo.png)
+
+Este algoritmo tiene una complejidad contenida en O(n^4) lo cuál es un orden muy grande en comparación al algoritmo de Graham para encontrar envolventes convexas (Graham lo hace en O(n log_2 n)). Sin embargo, es una buena primera aproximación a algoritmos en Geometría Computacional.
 ## Autor.
 - Adrian Aguilera Moreno.
 - Cta. `421005200`.
