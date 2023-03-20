@@ -24,22 +24,10 @@ struct Point
   Point(num id_, num x_, num y_) : id(id_), x(x_), y(y_) {} 
 };
 
-/* Cálcula la resta de dos puntos. */
-Point resta(Point p1, Point p2)
-{
-  return Point(-1, p1.x - p2.x, p1.y - p2.y);
-}
-
-/* Cálcula el producto de dos puntos. */
-double productoCruz(Point p1, Point p2)
-{
-  return (p1.x * p2.y) - (p1.y * p2.x);
-}
-
 /* Cálcula la orientación de giro respecto a 3 puntos. */
 int OrientationTest(Point p, Point q, Point r)
 {
-  double valor =  (r.y - p.y)*(q.x - p.x) - (q.y - p.y)*(r.x - p.x); //productoCruz(resta(p, q), resta(r, q));  
+  double valor =  (r.y - p.y)*(q.x - p.x) - (q.y - p.y)*(r.x - p.x);
   return (valor == 0) ? 0 : (valor > 0) ? 1 : -1;
 }
 
