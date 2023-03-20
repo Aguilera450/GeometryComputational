@@ -19,6 +19,6 @@ Se debe utilizar el compilador `g++ (GCC) 12.2.1` con la versión indicada o sup
 ## Consultas:
 Para esta práctica realice consultas extras al laboratorio, a continuación se muestran las referencias a los sitios de consulta:
 - [Lectura de archivos en C++.](https://aprende.olimpiada-informatica.org/algoritmia-geometria-computacional)
-- [Escritura de archivos en C++.](- [Escritura de archivos en C++.](https://parzibyte.me/blog/2020/09/11/escribir-archivo-texto-cpp/)
+- [Escritura de archivos en C++.](https://parzibyte.me/blog/2020/09/11/escribir-archivo-texto-cpp/)
 - [Convertir una string a int en C++.](https://www.techiedelight.com/es/convert-string-to-int-cpp/)
 - [Geometría Computacional | Aprende Programación Competitiva.](https://aprende.olimpiada-informatica.org/algoritmia-geometria-computacional)

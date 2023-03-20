@@ -2,6 +2,7 @@
 *.aux
 *.out
 *.log
+*.md~
 *.cpp~
 *.tex~
 *.txt~
