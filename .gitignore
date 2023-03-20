@@ -4,3 +4,5 @@
 *.log
 *.cpp~
 *.tex~
+*.txt~
+*.gitignore~
