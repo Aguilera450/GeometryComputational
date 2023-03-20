@@ -2,62 +2,22 @@
 entre cualesquiera dos puntos de $S$, denotado por $d$. Demuestra que d está formado por dos
 vértices del cierre convexo de $S$. \newline
 
-\textbf{\textit{Dem.}} Procedamos por inducción en el tamaño de $S$. \newline
+\textbf{\textit{Dem.}} Procedamos por reducción al absurdo. \newline
 
-Veamos que pasa cuándo $|S| = 3$.
-\begin{figure}[ht!]
-  \centering
-  \begin{tikzpicture}
-    %%%%%  Conjunto de puntos  %%%%%
-    \node (0) [brownV]  at (1,1){};
-    \node (1) [brownV]  at (0,-1){};
-    \node (2) [brownV]  at (2,-1){};
-    \node (T1)  at (1,-2) {Conjunto S.};
-
-    %%%%% Envolvente convexa  %%%%%
-    \begin{scope}[xshift=4cm]
-      \node (3) [brownV]  at (1,1){};
-      \node (4) [brownV]  at (0,-1){};
-      \node (5) [brownV]  at (2,-1){};
-
-      \draw [edge] (3) to (5);
-      \draw [edge] (3) to (4);
-      \draw [edge] (4) to (5);
-      \node (T2)  at (1,-2) {Envolvente convexa.};
-    \end{scope}
-
-    %%%%% Componente debajo  %%%%%%
-    \begin{scope}[xshift=8cm]
-      \node (6) [brownV]  at (1,1){};
-      \node (7) [brownV]  at (0,-1){};
-      \node (8) [brownV]  at (2,-1){};
-
-      \draw [blueE]  (6) to (7);
-      \draw [blueE]  (6) to (8);
-      \draw [edge]   (7) to (8);
-      \node (T3)  at (1,-2) {Diámetro de S.};
-    \end{scope}
-  \end{tikzpicture}
-\end{figure}
-Como podemos notar, el diámetro contiene $3 > 2$ puntos.
-\newline
-
-Supongamos que cuando $|S| = k$, el diámetro de $S$ contiene dos puntos del polígono formado
-por el cierre convexo de $S$.
-\newline
-
-¿Qué pasa cuándo nuestro conjunto de puntos $S$ aumenta en exactamente un punto? Existen 2 casos
-interesantes para dar respuesta a esta pregunta, analicemos estos por separado
+Supongamos que el diámetro $C(S)$ no contiene dos puntos del diámetro, entonces, para $d = xy$;
 \begin{itemize}
-\item Si el punto esta contenido\footnote{Casos: el punto esta al interior de $C(S)$, el punto esta en un segmento de $C(S)$.} en $C(S)$,
-  terminamos. Pues, por hipótesis, nuestro diámetro ya contiene dos puntos en $C(S)$ y la anexión del punto distinguido [digamos $v$] modificaría
-  al diámetro solo para aumentar $v$ (* esto lo podríamos  realizar tomando los puntos $x$ y $y$ más cercanos a $v$ que sean parte del diámetro, borar
-  $xy$ de diámetro y añadir $xv$ y $vy$ a este).
-  
-\item Si el punto esta al exterior de $C(S)$, debemos calcular la envolvente convexa de $C(S')$, donde $S' = S + v$, esto lo podemos realizar
-  econtrando las tangentes a $v$ con respecto de $C(S)$ y unirlas, este sería el nuevo cierre convexo. Lo anterior implica que $v$ será parte
-  del polígono formado por la envolvente convexa (de otro modo, $v$ sería punto interno y se cubre en el caso anterior). Por ($*$) podemos anexar
-  $v$ en $d$, y si el punto más cercano a $v$ es un extremo entonces basta con anexar ese segmento a $d$. Supongamos que cuando realizamos la
-  unión de $v$ con $C(S)$ perdimos los puntos en $C(S)$ que también estaban en $d$ garantizados por la hipótesis, entonces ya tenemos a $v$ y como
-  nadie en la envolvente pertenece a $d$, podemos anexar al vecino de $v$ en $C(S')$ a $d$ y terminamos.
+        \item Los dos puntos de $d$ están dentro de $C(S)$.
+              
+              Esto implica que $d$ no es la distancia más grande entre cualesquiera dos puntos
+              de $S$, pues tomando $xv$ donde $v$ es parte de la frontera de $C(S)$ tenemos que
+              $||xv|| > ||xy||$. He aquí una contradicción de suponer que $x, y$ están dentro de
+              $C(S)$.
+        \item Los dos puntos de $d$ están fuera de $C(S)$.
+              
+              Esto implicaría que $C(S)$ no es el cierre convexo\footnote{Pues $y$ o $x$ queda fuere de $C(S)$ y
+              contradice la definición de $C$.} de $S$ y por tanto llegamos a una contradicción.
+        \item O hay un punto de $d$ dentro ($x$) y otro fuera ($y$) de $C(S)$.
+              
+              Esto implicaría que $C(S)$ no es el cierre convexo de $S$ y por tanto hemos llegado a una contradicción.
 \end{itemize}
+Los casos anterior muestran que $d$ esta formado por dos vértices del cierre convexo. \hfill $\square$

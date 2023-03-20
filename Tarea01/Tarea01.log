@@ -1,9 +1,12 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2023.2.23)  9 MAR 2023 22:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2023.2.23)  17 MAR 2023 02:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**\nonstopmode\input Tarea01.tex
-(./Tarea01.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+**Tarea01.tex
+(./Tarea01.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-05-07>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
@@ -731,6 +734,74 @@ File: pgflibraryshapes.multipart.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 \pgfnodepartfivebox=\box90
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryangles.code.tex
+File: tikzlibraryangles.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx.sty
+Package: siunitx 2021-04-17 v2.8e A comprehensive (SI) units package
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
+\col@sep=\dimen271
+\ar@mcellbox=\box91
+\extrarowheight=\dimen272
+\NC@list=\toks43
+\extratabsurround=\skip75
+\backup@length=\skip76
+\ar@cellbox=\box92
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2021-05-07 LaTeX2e option processing using LaTeX3 keys
+)
+\l__siunitx_tmp_box=\box93
+\l__siunitx_tmp_dim=\dimen273
+\l__siunitx_tmp_int=\count322
+\l__siunitx_number_mantissa_length_int=\count323
+\l__siunitx_number_uncert_length_int=\count324
+\l__siunitx_round_int=\count325
+\l__siunitx_process_decimal_int=\count326
+\l__siunitx_process_uncertainty_int=\count327
+\l__siunitx_process_fixed_int=\count328
+\l__siunitx_process_integer_min_int=\count329
+\l__siunitx_process_precision_int=\count330
+\l__siunitx_group_min_int=\count331
+\l__siunitx_angle_marker_box=\box94
+\l__siunitx_angle_unit_box=\box95
+\l__siunitx_angle_marker_dim=\dimen274
+\l__siunitx_angle_unit_dim=\dimen275
+\l__siunitx_unit_int=\count332
+\l__siunitx_unit_denominator_int=\count333
+\l__siunitx_unit_numerator_int=\count334
+\l__siunitx_unit_prefix_int=\count335
+\l__siunitx_unit_prefix_base_int=\count336
+\l__siunitx_unit_prefix_gram_int=\count337
+\l__siunitx_number_product_int=\count338
+\c__siunitx_one_fill_skip=\skip77
+\l__siunitx_table_unit_align_skip=\skip78
+\l__siunitx_table_exponent_dim=\dimen276
+\l__siunitx_table_integer_dim=\dimen277
+\l__siunitx_table_mantissa_dim=\dimen278
+\l__siunitx_table_marker_dim=\dimen279
+\l__siunitx_table_result_dim=\dimen280
+\l__siunitx_table_uncert_dim=\dimen281
+\l__siunitx_table_fill_pre_dim=\dimen282
+\l__siunitx_table_fill_post_dim=\dimen283
+\l__siunitx_table_fill_mid_dim=\dimen284
+\l__siunitx_table_pre_box=\box96
+\l__siunitx_table_post_box=\box97
+\l__siunitx_table_mantissa_box=\box98
+\l__siunitx_table_result_box=\box99
+\l__siunitx_table_number_align_skip=\skip79
+\l__siunitx_table_text_align_skip=\skip80
+
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
+Package: translator 2020-08-03 v1.12c Easy translation of strings in LaTeX
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 
@@ -776,36 +847,27 @@ File: tikzlibrarycalc.code.tex 2020/12/27 v3.1.8b (3.1.8b)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
-\c@tracingmulticols=\count322
-\mult@box=\box91
-\multicol@leftmargin=\dimen271
-\c@unbalance=\count323
-\c@collectmore=\count324
-\doublecol@number=\count325
-\multicoltolerance=\count326
-\multicolpretolerance=\count327
-\full@width=\dimen272
-\page@free=\dimen273
-\premulticols=\dimen274
-\postmulticols=\dimen275
-\multicolsep=\skip75
-\multicolbaselineskip=\skip76
-\partial@page=\box92
-\last@line=\box93
-\maxbalancingoverflow=\dimen276
-\mult@rightbox=\box94
-\mult@grightbox=\box95
-\mult@gfirstbox=\box96
-\mult@firstbox=\box97
-\@tempa=\box98
-\@tempa=\box99
-\@tempa=\box100
-\@tempa=\box101
-\@tempa=\box102
-\@tempa=\box103
-\@tempa=\box104
-\@tempa=\box105
-\@tempa=\box106
+\c@tracingmulticols=\count339
+\mult@box=\box100
+\multicol@leftmargin=\dimen285
+\c@unbalance=\count340
+\c@collectmore=\count341
+\doublecol@number=\count342
+\multicoltolerance=\count343
+\multicolpretolerance=\count344
+\full@width=\dimen286
+\page@free=\dimen287
+\premulticols=\dimen288
+\postmulticols=\dimen289
+\multicolsep=\skip81
+\multicolbaselineskip=\skip82
+\partial@page=\box101
+\last@line=\box102
+\maxbalancingoverflow=\dimen290
+\mult@rightbox=\box103
+\mult@grightbox=\box104
+\mult@gfirstbox=\box105
+\mult@firstbox=\box106
 \@tempa=\box107
 \@tempa=\box108
 \@tempa=\box109
@@ -834,50 +896,59 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \@tempa=\box132
 \@tempa=\box133
 \@tempa=\box134
-\c@minrows=\count328
-\c@columnbadness=\count329
-\c@finalcolumnbadness=\count330
-\last@try=\dimen277
-\multicolovershoot=\dimen278
-\multicolundershoot=\dimen279
-\mult@nat@firstbox=\box135
-\colbreak@box=\box136
-\mc@col@check@num=\count331
+\@tempa=\box135
+\@tempa=\box136
+\@tempa=\box137
+\@tempa=\box138
+\@tempa=\box139
+\@tempa=\box140
+\@tempa=\box141
+\@tempa=\box142
+\@tempa=\box143
+\c@minrows=\count345
+\c@columnbadness=\count346
+\c@finalcolumnbadness=\count347
+\last@try=\dimen291
+\multicolovershoot=\dimen292
+\multicolundershoot=\dimen293
+\mult@nat@firstbox=\box144
+\colbreak@box=\box145
+\mc@col@check@num=\count348
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
-rs
-\f@nch@headwidth=\skip77
-\f@nch@O@elh=\skip78
-\f@nch@O@erh=\skip79
-\f@nch@O@olh=\skip80
-\f@nch@O@orh=\skip81
-\f@nch@O@elf=\skip82
-\f@nch@O@erf=\skip83
-\f@nch@O@olf=\skip84
-\f@nch@O@orf=\skip85
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip83
+\f@nch@O@elh=\skip84
+\f@nch@O@erh=\skip85
+\f@nch@O@olh=\skip86
+\f@nch@O@orh=\skip87
+\f@nch@O@elf=\skip88
+\f@nch@O@erf=\skip89
+\f@nch@O@olf=\skip90
+\f@nch@O@orf=\skip91
 ) (./Tarea01.aux)
 \openout1 = `Tarea01.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-Package hyperref Info: Link coloring OFF on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+Package hyperref Info: Link coloring OFF on input line 102.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -887,31 +958,31 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count332
+\c@section@level=\count349
 )
-LaTeX Info: Redefining \ref on input line 92.
-LaTeX Info: Redefining \pageref on input line 92.
-LaTeX Info: Redefining \nameref on input line 92.
+LaTeX Info: Redefining \ref on input line 102.
+LaTeX Info: Redefining \pageref on input line 102.
+LaTeX Info: Redefining \nameref on input line 102.
 
 (./Tarea01.out) (./Tarea01.out)
 \@outlinefile=\write4
 \openout4 = `Tarea01.out'.
 
-\c@lstlisting=\count333
+\c@lstlisting=\count350
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count334
-\scratchdimen=\dimen280
-\scratchbox=\box137
-\nofMPsegments=\count335
-\nofMParguments=\count336
-\everyMPshowfont=\toks43
-\MPscratchCnt=\count337
-\MPscratchDim=\dimen281
-\MPnumerator=\count338
-\makeMPintoPDFobject=\count339
-\everyMPtoPDFconversion=\toks44
+\scratchcounter=\count351
+\scratchdimen=\dimen294
+\scratchbox=\box146
+\nofMPsegments=\count352
+\nofMParguments=\count353
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count354
+\MPscratchDim=\dimen295
+\MPnumerator=\count355
+\makeMPintoPDFobject=\count356
+\everyMPtoPDFconversion=\toks45
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -921,32 +992,38 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
+File: siunitx-abbreviations.cfg 2021-04-17 v2.8e siunitx: Abbreviated units
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
+-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 102
+.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 102
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 97
-.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 10
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 9
-7.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
+02.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 <../Imagen/Portada.jpg, id=7, 903.375pt x 995.72pt>
 File: ../Imagen/Portada.jpg Graphic file (type jpg)
 <use ../Imagen/Portada.jpg>
-Package pdftex.def Info: ../Imagen/Portada.jpg  used on input line 98.
+Package pdftex.def Info: ../Imagen/Portada.jpg  used on input line 108.
 (pdftex.def)             Requested size: 180.6718pt x 199.14047pt.
  [1
 
@@ -962,19 +1039,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--15
 
  []
 
-[2]
-! Undefined control sequence.
-<recently read> \taxtit 
-                        
-l.125   \item \taxtit
-                     {Caso 2}. El tener un punto en un segmento no disminuye...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-) [3] (./Problema02.tex
+[2]) [3] (./Problema02.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--4
 
  []
@@ -984,17 +1049,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--44
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--48
+)
+Underfull \hbox (badness 10000) in paragraph at lines 23--121
 
  []
 
-) [4] (./Problema03.tex
+(./Problema03.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--3
 
  []
@@ -1004,7 +1064,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--23
 
  []
 
-) [5] (./Problema04.tex
+) [4] (./Problema04.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--5
 
  []
@@ -1019,18 +1079,96 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
  []
 
-) [6] (./Tarea01.aux)
+) [5] (./Problema05.tex) (./Problema05A.tex
+Underfull \hbox (badness 10000) in paragraph at lines 24--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+) (./Problema05B.tex
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 26.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 26.
+
+Missing character: There is no ° in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--32
+
+ []
+
+[6]) (./Problema05C.tex
+Underfull \hbox (badness 10000) in paragraph at lines 21--24
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--33
+
+ []
+
+) (./Problema05D.tex
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+) [7] (./Problema06.tex
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--56
+
+ []
+
+[8]) [9] (./Problema07.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--3
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--26
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--32
+
+ []
+
+) [10] (./Problema08.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--4
+
+ []
+
+) [11] (./Tarea01.aux)
 Package rerunfilecheck Info: File `Tarea01.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 26400 strings out of 478862
- 488395 string characters out of 5858945
- 834594 words of memory out of 6000000
- 43518 multiletter control sequences out of 15000+600000
- 416412 words of font info for 81 fonts, out of 8000000 for 9000
+ 29112 strings out of 478862
+ 563274 string characters out of 5858945
+ 890144 words of memory out of 6000000
+ 46140 multiletter control sequences out of 15000+600000
+ 420081 words of font info for 95 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 76i,12n,80p,406b,828s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 76i,13n,80p,387b,1766s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texl
@@ -1048,11 +1186,13 @@ texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Tarea01.pdf (6 pages, 366071 bytes).
+onts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/cm-super/sfrm0800.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/cm-super/sfrm1000.pfb>
+Output written on Tarea01.pdf (11 pages, 402145 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
+ 195 PDF objects out of 1000 (max. 8388607)
+ 159 compressed objects within 2 object streams
+ 50 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

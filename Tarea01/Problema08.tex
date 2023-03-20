@@ -1,0 +1,25 @@
+\textbf{8.} Suponga que se tiene una lista de aristas doblemente ligada (DCEL) de una subdivisión
+plana. Diseña un algoritmo que encuentre todas las caras que contienen un vértice en la cara exterior.
+\newline
+
+\textbf{Solución.} A continuación se exhibe el algoritmo requerido:
+\begin{enumerate}
+\item Ordenamos la lista de aristas (DCEL), esto nos toma $\mathcal{O}(n \log n)$.
+\item Encontremos el punto más ``chico'' en nuestro polígono. Esto lo realizamos en $\mathcal{O}(1)$,
+  pues hemos ordenado nuestras aristas.
+\item Recorramos siempre hacia la izquierda excepto cuando:
+  \begin{enumerate}
+  \item El vértice al que llegamos no pertenece a una cara externa. En este caso nos regresamos
+    y ahora tomamos el camino más a la derecha.
+  \item El vértice de llegada es el vértice de partida, entonces hemos llegado y terminamos.
+  \end{enumerate}
+  Durante el recorrido vamos acumulando los vértices que sean externos en una lista, como el recorrido
+  esta dado por las aristas DCEL esto nos toma a lo más tiempo $\mathcal{O}(n)$. Pues cuando lleguemos a un vértice
+  interno de inmediato nos regresamos.
+  
+  ¿Cómo sabemos que el vértice pertenece o no a la cara externa? La arista nos lo indica.
+\end{enumerate}
+
+\textit{Análisis de complejidad}. La complejidad de este algoritmo esta contenida en
+\[\mathcal{O}(n \log n) + \mathcal{O}(n) + \mathcal{O}(1) = \mathcal{O}(n \log n).\]
+

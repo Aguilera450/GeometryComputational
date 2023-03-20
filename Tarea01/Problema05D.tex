@@ -1,0 +1,21 @@
+\textbf{Solución (d):}
+Este algoritmo estará basado fuertemente en el algoritmo de Graham. A continuación
+se exhibe el algoritmo requerido:
+ \begin{enumerate}
+     \item Aplicar Graham en el conjunto de centros de cada círculos $S'$. Esto nos
+     toma $O(n \log_2 n)$
+     \item Obtenemos las paralelas de $C(S')$ en exactamente una unidad, por el
+     inciso  $c)$ sabemos que las círcunferencias de estos puntos forman el cierre
+     convexo $C(S)$. Esto nos toma $O(n)$.
+     \item Por cada recta paralela, digamos $\ell_{i} 's$ tomemos sus extremos en un
+       sentido $\rightarrow$ y recorremos desde ese punto por los pedacitos de círcunferencia
+       a donde son tangentes (por a,b,c) hasta encontrarse con la otra recta, así unimos ese
+       pequeño arco. Esto lo hacemos en $\mathcal{O}(n)$.
+ \end{enumerate}
+
+El resultado de estos pasos es el cierre convexo de $S$.\newline
+
+\textit{Análisis de complejidad.} La complejidad esta contenida en
+\[
+\mathcal{O}(n \log n) + \mathcal{O}(n) + \mathcal{O}(n) = \mathcal{O}(n \log n).
+\]

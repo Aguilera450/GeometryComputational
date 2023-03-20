@@ -48,6 +48,8 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows,automata}
 %\usetikzlibrary[topaths]
+\usetikzlibrary{angles, quotes}
+\usepackage{siunitx}
 
 % Def. Dr. César.
 \usetikzlibrary{shapes,calc}
@@ -65,6 +67,14 @@
 \tikzstyle{blackSV}=[semicircle, fill=black, minimum size=3pt, inner sep=0pt, outer sep=0pt, rotate=225]
 \tikzstyle{vertex}=[circle, draw, minimum size=6pt, line width=0.75pt, inner sep=0pt, outer sep=0pt]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\Star[3][]{%
+\path[#1] (0  :#3) -- ( 36:#2) 
+       -- (72 :#3) -- (108:#2)
+       -- (144:#3) -- (180:#2)
+       -- (216:#3) -- (252:#2)
+       -- (288:#3) -- (324:#2)--cycle;}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Margins
 \addtolength{\voffset}{-1.5cm}
 \addtolength{\hoffset}{-1.5cm}
@@ -107,8 +117,21 @@
 \input{./Problema01.tex}
 \newpage
 \input{./Problema02.tex}
-\newpage
+\newline
+
 \input{./Problema03.tex}
 \newpage
 \input{./Problema04.tex}
+\newpage
+\input{./Problema05.tex}
+\input{./Problema05A.tex}
+\input{./Problema05B.tex}
+\input{./Problema05C.tex}
+\input{./Problema05D.tex}
+\newpage
+\input{./Problema06.tex}
+\newpage
+\input{./Problema07.tex}
+\newpage
+\input{./Problema08.tex}
 \end{document}

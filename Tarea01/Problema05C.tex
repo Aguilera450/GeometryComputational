@@ -1,0 +1,33 @@
+\textbf{Dem. ($c$):} Análicemos dos posibles casos:
+\begin{itemize}
+\item[$\Rightarrow )$] Procedemos por reducción al absurdo.
+  
+ Nota: $C(S)$ el cierre de $S$ y $C(S')$ el cierre de $S'$
+ Supongamos que en $C(S)$ se encuentra $C_i$ como parte de su contorno y $O_i$ 
+ (centro de $C_i$). No esta $C(S')$, esto implica que:
+
+ \begin{enumerate}
+     \item $O_i$ queda fuera de $C(S')$, esto \textbf{No} se admite, pues $C(S')$
+     es el cierre convexo.
+     \item $O_i$ \textbf{No} es parte del contorno de $C(S')$ y queda interno, por tanto
+     existe $O_j$ que es más ''externo'' que $O_i$, esto implica que $C_j$ es más externo
+     que $C_i$ (recordando que los círculos son unitarios) pero $C_i$, es parte del contorno.
+     
+     He aquí una contradicción de suponer que $O_i\notin C(S')$.
+ \end{enumerate}
+
+\item[$\Leftarrow )$] Procedamos por reducción al absurdo.
+  
+Sea $C(S')$ el cierre convexo de $S'$ y $C(S')$ el cierre convexo de $S$. 
+Si $O_i\in C(S')\Rightarrow C_i\notin C(S)$ para algún $i\in [1,...,n]$ y 
+$O_i$ corresponde al centro de $C_i$.\\
+
+Como $C_i$ \textbf{No} es parte de $C(S)$, entonces existe $C_j$ más ''externo'' que 
+$C_i$ y por tanto $O_j$ es más ''externo'' que $O_i$, pues son círculos unitarios, 
+esto contradice el hecho de que $O_i\in C(S')$ refiriendonos a que forma parte de su 
+contorno, pues $O_j$ queda fuera de $C(S')$ y $O_j$ es elemento de $S'$. Lo anterior contradice
+el hecho de que $O_i$ era parte de la frontera de $C(S').$\\
+\end{itemize}
+De aquí concluimos lo que se quería mostrar. \hfill $\square$
+\newline
+

@@ -1,0 +1,116 @@
+\large\section*{Pregunta 5}\Large
+
+Sea $S$ un conjunto de $n$ círculos unitarios en el plano que posiblemente se intersectan. 
+Se desea calcular el cierre convexo  de $S$.
+
+\begin{enumerate}[a)]
+%%%%%%%%%%%%%%%%%%%%%%%%        Inciso A        %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Demuestra que el contorno del cierre convexo de $S$ consiste de segmentos de recta y 
+pedacitos de círculos en $S$.\\
+
+Procedemos por inducción.
+
+\textbf{Caso Base}\\ 
+Cuando tenemos un solo círculo se 
+%% dibujo
+cumple por vacuidad. Con $2$ círculos obtenemos tangentes a cada circunferencia, por cada
+circuferencia en $2$ puntos distintos. A partir de los puntos de tangencia con $C_1$ y hasta
+la frontera externa tenemos un ''pedacito'' de circulo (caso análogo con $C_2$ y $t_1$, $t_2$).
+Las tangentes $t_1$ y $t_2$ son las rectas y por tanto terminamos.
+
+\textbf{Hipótesis de Inducción}\\
+Supongamos que el cierre convexo esta formado por ''pedacitos'' de círculo y rectas, para $k$ círculos.
+
+\textbf{Paso Inductivo}\\
+Veamos que sucede si ingresamos un círculo más, los posibles casos son:
+\begin{enumerate}[1.]
+    %%%%%%%%%%%     1
+    \item El nuevo círculo queda contenido en el cierre convexo. En este caso y por H.I tenemos que
+    el cierre convexo \textbf{No} se ve modificado y terminamos.
+    %%%%%%%%%%%     2
+    \item El nuevo círculo queda como frontera. Por H.I, el cierre ya se forma por ''pedacitos''
+    de círculos y segmentos de rectas, además el nuevo círculo anexa una parte de su contorno
+    y dos segmentos tangentes del anterior cierre al nuevo círculo y por tanto terminamos, o es
+    parte de la frontera en un solo punto y por tanto terminamos. Pues \textbf{No} se anexa algo
+    más que segmentos de recta y ''pedacitos'' de círculo.$_\square$
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%        Inciso B        %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Demuestra que cada círculo puede estar a lo más una vez en el contorno del cierre convexo.\\
+Supongamos que un círculo puede estar al menos $2$ veces en el contorno del cierre convexo. Entonces,
+existe un círculo $C$ que tiene al menos \textbf{2 arcos} sobre el contorno del cierre convexo.
+Si esto fuese cierto, tendríamos que hay más de $2$ tangentes sobre $C$ tal que \textbf{No} se
+intersectan, como cada tangente a $C$ debe ser parte del contorno.
+%%%%%%%%    Dibujo    %%%%%%%%%
+notemos como cada recta tangente viene desde otro círculo, entonces puede pasar que:
+%%%%%%%%    Dibujo    %%%%%%%%%
+\begin{enumerate}[1.]
+    %%%%%%%%%%%%    1   %%%%%%%
+    \item Hay un círculo que \textbf{No} pertenece al cierre$!$.
+    %%%%%%%%%%%%    2   %%%%%%%%
+    \item Los círculos son parte del cierre, y por tanto perdemos convexidad$!$.
+\end{enumerate}
+
+¿Por qué perdemos convexidad?\\
+%%%%%%%%    Dibujo    %%%%%%%%%
+Como hemos dicho, nuestro círculo esta al menos $2$ veces en el contorno, esto implica que
+hay al menos $3$ tangentes al círculo que son parte del contorno y que \textbf{No} son
+contiguas (si lo fuera serían una sola recta en vez de $2$). Como $2$ segmentos \textbf{No}
+son contiguos, entonces, NO existe el caso donde
+%%%%%%%%    Dibujo      %%%%%%%%
+y por tanto una recta (o segmento prolongado) \textbf{siempre} puede cortar los $3$ segmentos
+tangentes a $C!$, pues si esto NO sucediera, implicaría que una de las (segmentos) rectas
+esta contenida por otras $2$ y esto es falso, pues supusimos que las $3$ son parte del contorno$!$.\\
+%%%%%%%%    Dibujo      %%%%%%%%
+$\therefore$ Un círculo esta a lo más una vez en el contorno de cierre convexo.
+%%%%%%%%%%%%%%%%%%%%%%%%        Inciso C        %%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \item Sea $S'$ el conjunto de puntos formado por los centros de los círculos en $S$. 
+ Muestra que un círculo en $S$ aparece en el contorno del cierre convexo sí y sólo sí 
+ el centro del círculo pertenece al cierre convexo de $S'$.\\
+ Analicemos $2$ posibles casos:\\
+ $\Rightarrow )$ Procedemos por reducción al absurdo.\\
+ Nota: $C(S)$ el cierre de $S$ y $C(S')$ el cierre de $S'$
+ Supongamos que en $C(S)$ se encuentra $C_i$ como parte de su contorno y $O_i$ 
+ (centro de $C_i$). No esta $C(S')$, esto implica que:
+
+ \begin{enumerate}[1.]
+     \item $O_i$ queda fuera de $C(S')$, esto \textbf{No} se admite, pues $C(S')$
+     es el cierre convexo.
+     \item $O_i$ \textbf{No} es parte del contorno de $C(S')$ y queda interno, por tanto
+     existe $O_j$ que es más ''externo'' que $O_i$, esto implica que $C_j$ es más externo
+     que $C_i$ (recordando que los círculos son unitarios) pero $C_i$, es parte del contorno$!$.\\
+     He aquí una contradicción de suponer que $O_i\notin C(S')$.
+ \end{enumerate}
+
+$\Leftarrow)$ Procedamos por reducción al absurdo.\\
+Sea $C(S')$ el cierre convexo de $S'$ y $C(S')$ el cierre convexo de $S$. 
+Si $O_i\in C(S')\Rightarrow C_i\notin C(S)$ para algún $i\in [1,...,n]$ y 
+$O_i$ corresponde al centro de $C_i$.\\
+
+Como $C_i$ \textbf{No} es parte de $C(S)$, entonces existe $C_j$ más ''externo'' que 
+$C_i$ y por tanto $O_j$ es más ''externo'' que $O_i$, pues son círculos unitarios, 
+esto contradice el hecho de que $O_i\in C(S')$ refiriendonos a que forma parte de su 
+contorno, pues $O_j$ queda fuera de $C(S')$ y $O_j$ es elemento de $S'!$.\\
+
+De aquí concluimos lo que se quería mostrar.$_\square$
+%%%%%%%%%%%%%%%%%%%%%%%%        Inciso D        %%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \item Diseña un algoritmo de tiempo $O(n \log n)$ para calcular el cierre convexo de $S$.\\
+ Este algoritmo estará basado fuertemente en el algoritmo de Graham. A continuación
+ se exhibe el algoritmo requerido:
+ \begin{enumerate}[1.]
+     \item Aplicar Graham en el conjunto de centros de cada círculos $S'$. Esto nos
+     toma $O(n \log_2 n)$
+     \item Obtenemos las paralelas de $C(S')$ en exactamente una unidad, por el
+     inciso  $c)$ sabemos que las círcunferencias de estos puntos forman el cierre
+     convexo $C(S)$. Esto nos toma $O(n)$.
+     \item Por cada recta paralela, digamos $\ell_{i} 's$ tomemos sus extremos en un
+     sentido $\rightarrow$ y recorremos desde ese punto.
+ \end{enumerate}
+
+Por los pedacitos de círcunferencia a donde son tangentes (por a,b,c) hasta encontrarse
+con la otra recta, así unimos ese pequeño arco. Esto lo hacemos en $O(n)$.\\
+
+El resultado de estos pasos es el cierre convexo de $S$.
+
+Análisis de complejidad. La complejidad esta contenida en 
+$O(n \log n) + O(n) + O(n) = O(n \log n)$.
+\end{enumerate}

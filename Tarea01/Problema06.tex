@@ -1,0 +1,118 @@
+\textbf{5.} Prueba o da un contra ejemplo:
+\begin{enumerate}
+\item Los vértices convexos de un polígono simple pertenecen al cierre convexo.
+\item La intersección de dos polígonos convexos es convexo.
+\item La unión de dos polígonos convexos es convexo.
+\item La intersección de un polígono estrellado y un convexo es convexo.
+\end{enumerate}
+\textbf{Solución:}
+\begin{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%        Inciso A        %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Los vértices convexos de un polígono simple pertenecen al cierre convexo\\
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE 1
+  \begin{center}
+    \begin{tikzpicture}[
+        my angle/.style = {draw, fill=teal!30,
+          angle radius=7mm, 
+          angle eccentricity=1.1, 
+          right, inner sep=1pt,
+          font=\footnotesize} 
+      ]
+      \draw   (0,2) coordinate[label=below:$A$] (a) --
+      (12,2) coordinate[label=below:$C$] (c) --
+      (12,7) coordinate[label=above:$B$] (b) --
+      (10,3) coordinate[label=above:$D$] (d) --
+      (8,5) coordinate[label=above:$E$] (e) --
+      (6,3) coordinate[label=above:$F$] (f) --
+      (4,5) coordinate[label=above:$G$] (g) --
+      (2,3) coordinate[label=above:$H$] (h) --
+      (0,7) coordinate[label=above:$I$] (i) -- cycle;
+      \pic[my angle, "$\alpha=\SI{45}{\degree}$"] {angle = h--g--f};
+      \pic[my angle, "$\beta=\SI{45}{\degree}$"] {angle = f--e--d};
+      \draw[edgeDotted] (0,7) to (12,7);
+    \end{tikzpicture}
+  \end{center}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  $\alpha, \beta$ son vértices convexos, pues $\alpha, \beta < 180^\circ$ y \textbf{NO} forman parte del cierre convexo
+  
+  %%%%%%%%%%%%%%%%%%%%%%%%        Inciso B        %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item  Procedemos por contradicción.
+
+  Supongamos que la intersección de dos polígonos $A_i$ y $A_j$ convexos \textbf{No} es convexo.
+  Entonces $A_i\cap A_j$ tienen al menos un ángulo $\beta >180^\circ$, $\beta$ debe ser generado
+  por un punto de intersección de $A_i\cap A_j$, pues si no, aplicaría que $\beta$ viene de
+  un vértice en $A_i$ o $A_j$, pero estos son convexos.
+
+  Entonces ¿Cómo son las intersecciones $A_i\cap A_j$? (Además son solo $2$, por que
+  son convexas).\\
+  %%%%%%%       Dibujos     %%%%%%%
+  Implica que $P_i$ tal que $\measuredangle P_i > 180^\circ$ tiene como
+  vecinos a vértices de distintos polígonos digamos $P_{Ai} \in A_i$ y 
+  $P_{Aj} \in A_j$ entonces el vecino de $P_i$ que \textbf{No} es $P_{Ai}$
+  y esta sobre $A_i$ es un extremo de segmento resultado de prolongar $P_{Ai} P_i$
+  (pues ya vimos que el ángulo $P_i$ era forrado por intersección) que tiene
+  exactamente $180^\circ$, esto indica que $P_i P_{Aj}$ No pertenece a la 
+  intersección$!$.\\
+
+  He aquí una contradicción de suponer que la intersección de polígonos
+  convexos \textbf{No} es convexa. Luego concluimos lo que queríamos mostrar.$_\square$
+  %%%%%%%%%%%%%%%%%%%%%%%%        Inciso C        %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item La unión de dos polígonos convexos es convexo.
+  
+  Como podemos ver, las siguientes figuras obedecen a un rectángulo y un triángulo, ambos convexos.
+  Sin embargo, su unión no es convexa, pues la línea punteada corta esta unión en $4$ puntos.
+  Recordemos que un polígono convexo es cortado a lo más en $2$ puntos, es por esto que el
+  enunciado es falso.
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE 1
+  \begin{center}
+    \begin{tikzpicture}[
+        my angle/.style = {draw, fill=teal!30,
+          angle radius=7mm, 
+          angle eccentricity=1.1, 
+          right, inner sep=1pt,
+          font=\footnotesize} 
+      ]
+      % Rectángulo:
+      \draw   (0,2) coordinate[label=below:] (a) --
+      (0,4) coordinate[label=below:] (c) --
+      (4,4) coordinate[label=above:] (d) --
+      (4,2) coordinate[label=above:] (b) --
+      %(2,3) coordinate[label=above:$H$] (h) --
+      %(0,7) coordinate[label=above:$I$] (i) --
+      cycle;
+      % Triángulo:
+      \draw (2,2) coordinate[label=above:] (e) --
+      (3.5,3) coordinate[label=above:] (f) --
+      (4,6) coordinate[label=above:] (g) -- cycle;
+      %\pic[my angle, "$\alpha=\SI{45}{\degree}$"] {angle = h--g--f};
+      %\pic[my angle, "$\beta=\SI{45}{\degree}$"] {angle = f--e--d};
+      % Recta cortante:
+      \draw[edgeDotted] (-2,3) to (5,5);
+      % Intersecciones:
+      \node(1) [blueV, label=30:$$] at (0, 3.58){};
+      \node(2) [blueV, label=30:$$] at (1.45, 4){};
+      \node(3) [blueV, label=30:$$] at (3.2, 4.5){};
+      \node(4) [blueV, label=30:$$] at (3.8, 4.7){};
+    \end{tikzpicture}
+  \end{center}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%        Inciso D        %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item La intersección de un polígono estrellado y un convexo es convexo.
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE 1
+  \begin{center}
+    \begin{tikzpicture}
+      \Star[fill=white!30,draw]{2}{4}
+      \draw   (-4,0) coordinate[label=below:] (a) --
+      (-4,4) coordinate[label=below:] (c) --
+      (4,4) coordinate[label=above:] (d) --
+      (4,2) coordinate[label=above:] (b) --
+      cycle;
+      \draw[edgeDotted] (-3.6,1.5) to (2.5,3);
+    \end{tikzpicture}
+  \end{center}
+  Como podemos notar, la recta punteada corta al polígono resultado de la intersección en
+  4 puntos, por esta razón el polígno resultado de la intersección antes mencionada \textbf{No}
+  es convexo.
+\end{enumerate}
+
+  

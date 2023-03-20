@@ -1,0 +1,34 @@
+\textbf{Dem. ($b$):} Procedamos por reducción al absurdo.
+
+Supongamos que un círculo puede estar al menos $2$ veces en el contorno del cierre convexo.
+Entonces, existe un círculo $C$ que tiene al menos \textbf{2 arcos} sobre el contorno del
+cierre convexo. Si esto fuese cierto, tendríamos que hay más de $2$ tangentes sobre $C$ tal
+que \textbf{No} se intersectan, como cada tangente a $C$ debe ser parte del contorno,
+%%%%%%%%    Dibujo    %%%%%%%%%
+ entonces puede pasar que:
+%%%%%%%%    Dibujo    %%%%%%%%%
+\begin{enumerate}
+    %%%%%%%%%%%%    1   %%%%%%%
+\item Hay un círculo que \textbf{No} pertenece al cierre, pues es dejado fuera por una tangente (digamos
+  que las dos más juntas hacen el cierre). Hasta aquí hemos llegado a una contradicción por suponer que
+  hay un círculo con al menos dos arcos en el cierre convexo.
+    %%%%%%%%%%%%    2   %%%%%%%%
+\item Los círculos son parte del cierre, y por tanto perdemos convexidad. Nuevamente hemos llegado
+  a contradecir lo supuesto.
+\end{enumerate}
+
+¿Por qué perdemos convexidad?\\
+%%%%%%%%    Dibujo    %%%%%%%%%
+Como hemos dicho, nuestro círculo esta al menos $2$ veces en el contorno, esto implica que
+hay al menos $3$ tangentes al círculo que son parte del contorno y que \textbf{No} son
+contiguas (si lo fuera serían una sola recta en vez de $2$). Como $2$ segmentos \textbf{No}
+son contiguos, entonces, NO existe el caso donde hayan dos rectas contiguas tales que formen
+un ángulo de $180°$
+%%%%%%%%    Dibujo      %%%%%%%%
+y por tanto una recta (o segmento prolongado) \textbf{siempre} puede cortar los $3$ segmentos
+tangentes a $C!$, pues si esto NO sucediera, implicaría que una de las (segmentos) rectas
+esta contenida por otras $2$ y esto es falso, pues supusimos que las $3$ son parte del contorno.\\
+%%%%%%%%    Dibujo      %%%%%%%%
+\[
+\therefore \text{ Un círculo esta a lo más una vez en el contorno de cierre convexo.}
+\]

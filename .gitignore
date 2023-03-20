@@ -1,0 +1,6 @@
+*.out
+*.aux
+*.out
+*.log
+*.cpp~
+*.tex~

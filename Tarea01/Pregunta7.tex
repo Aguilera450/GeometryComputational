@@ -1,13 +1,15 @@
-\textbf{7.} Dado un conjunto de triángulos (definiendo sus 3 puntos) describe un algoritmo 
-de barrido de línea que encuentre los triángulos contenidos en otros.\newline
+\large\section*{Pregunta 7}\Large
 
-\textbf{Solución.} Realicemos barrido de línea horizontal.
+Dado un conjunto de triángulos (definiendo sus 3 puntos) describe un algoritmo 
+de barrido de línea que encuentre los triángulos contenidos en otros.\\
+
+Realicemos barrido de línea horizontal.
 
 \begin{enumerate}
     %%%%%%%%%%%%%       1       %%%%%%%%%%%
-    \item Ordenemos nuestro conjunto de puntos $\mathcal{O}(n\log n)$.
+    \item Ordenemos nuestro conjunto de puntos $O(n\log n)$.
     %%%%%%%%%%%%%       2      %%%%%%%%%%%%
-    \item Empezamos el barrido desde el punto más a la izquierda toma $\mathcal{O}(n)$
+    \item Empezamos el barrido desde el punto más a la izquierda toma $O(n)$
     encontrar el punto más a la izquierda.
     %%%%%%%%%%%%%       3       %%%%%%%%%%%%
     \item Iniciamos barriendo tal como lo realizamos en el barrido de línea para
@@ -26,9 +28,9 @@ y nos vemos al siguiente vértice.\\
 
 \textbf{Observación} En los $2$ casos metemos el triángulo al estado de la línea.\\
 
-Esto nos puede llevar $\mathcal{O}(\frac{n}{3})\in \mathcal{O}(n)$. Como esto se realiza para al menos
+Esto nos puede llevar $O(\frac{n}{3})\in O(n)$. Como esto se realiza para al menos
 $\frac{n}{3}$ vértices (los que inician los triángulos), entonces tenemos una complejidad
-total de $\mathcal{O}(n^2)$.\\
+total de $O(n^2)$.\\
 
-\textit{Análisis de complejidad.} La complejidad esta contenida en 
-\[\mathcal{O}(n \log n) + \mathcal{O}(n) + \mathcal{O}(n^2) = \mathcal{O}(n^2).\]
+Análisis de complejidad. La complejidad esta contenida en 
+$O(n \log n) + O(n) + O(n^2) = O(n^2)$. 
