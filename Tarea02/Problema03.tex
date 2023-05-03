@@ -1,0 +1,49 @@
+%%%%%%%%%%%%%%%%%%%% Problema02:
+\textbf{3.} Demuestra que cualquier polígono admite una triangulación,
+incluso si el polígono tiene hoyos.\newline
+
+\begin{proof}
+  Para este ejercicio basta exhibir un algoritmo que genere la triangulación
+  del polígno con hoyos. La idea será separar nuestro polígono en polígonos
+  sin hoyos y triangularlos por separado. A continuación se exhibe el algoritmo
+  deseado:
+  \begin{enumerate}
+  \item Ordenemos nuestros puntos. Esto lo realizamos en $\mathcal{O}(n \log n)$.
+  \item Realizamos un barrido de línea para encontrar los hoyos. Este barrido
+    nos tomará $\mathcal{O}(n)$, y detectaremos hoyos cuando el estado de la
+    línea nos indique que hay al menos $4$ aristas en su posición y conforme
+    el barrido avance esto se sigue cumpliendo hasta que eventualmente llegamos
+    a que $2$ de los (al menos) $4$ segmentos que siempre estuvieron en el estado
+    de la línea (no necesariamente los mismos segementos), siempre fueron ``internos''
+    de los otros segmentos (siempre estuvieron ``entre ellos'').
+
+    Una manera de hacer esto sería coloreando las aristas, si en un punto el estado
+    de la línea me indica que las trayectorias formadas hasta el momento (con el
+    avance de la línea) y coloreadas de distinto color se unen, entonces cambio el
+    color a la trayectoria más pequeña. Si una trayectoria núnca se unió y además
+    forma un ciclo interno al polígono, entonces este es un hoyo. \textbf{Obs.} Tomar
+    esta idea sin mayor cuidado nos puede llevar a una complejidad cuadrada (aquí
+    podemos hacer uso de la estrategia usada en el agoritmo de  Borůvka-Kruskal
+    para encontrar ciclos y agrupar).
+  \item Ahora que hemos encontrado los ciclos, podemos con gran facilidad segmentar
+    nuestro polígono en nuevos polígonos sin hoyos. Para esto;
+    \begin{enumerate}
+    \item tomamos una arista del hoyo $O_i$, digamos $e$, entonces unimos los extremos
+      de $e$ con los vértices más cercanos en el polígono y verificamos si estas nuevas
+      aristas son ``estrictamente internas al polígono'' o no. En caso de que sí, entonces
+      serán parte de nuestra subdivisión, en otro caso la descartamos. Esto lo podemos
+      hacer con ayuda de un nuevo barrido y nos toma $\mathcal{O}(n)$ barrer nuestros puntos
+      y $\mathcal{O}(n)$ realizar las comparaciones para encontrar las nuevas aristas para
+      nuestra subdivisión. Si el número de aristas de $O_i$ es lineal respecto al número de vértices
+      en el polígono, entonces tendremos que hacer $\mathcal{O}(n^2)$ comparaciones. De lo
+      anterior tenemos una subdivisión.
+    \end{enumerate}
+  \item Ahora aplicamos el algoritmo de triangulación visto en clase a cada parte de la subdivisón
+    encontrada.
+  \end{enumerate}
+  \textit{Análisis de complejidad.} La complejidad de este algoritmo esta contenida en
+  \[\mathcal{O}(n + k\cdot \log n) + \mathcal{O}(n) + \mathcal{O}(n \log n) + \mathcal{O}(n^2) = \mathcal{O}(n^2).\]
+  
+  Como el algoritmo anterior nos regresa una triangulación de nuestro polígno con hoyos, entonces
+  hemos mostrado lo requerido.
+\end{proof}

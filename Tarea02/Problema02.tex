@@ -1,0 +1,31 @@
+%%%%%%%%%%%%%%%%%%%% Problema02:
+\textbf{2.} Muestra que si un polígono tiene $\mathcal{O}(1)$ vértices no regulares,
+entonces el algoritmo de triangulación visto en clase se puede adaptar para usar tiempo
+$\mathcal{O}(n)$. \newline
+
+$\rhd$ \textbf{Solución:} Recordemos que el algoritmo visto en clase toma
+$\mathcal{O}(n + k \cdot \log n)$, dónde $n$ es lo que nos cuesta realizar
+el barrido punto a punto (estaciones por eventos) y $k \cdot \log n$ son
+los $k$ vértices une y divide (vértices no regulares), y la búsqueda que se
+debe hacer en el estado de la línea (cada vértice une y divide) es exactamente
+una búsqueda binaria en $\log n$.\newline
+
+Ahora, observemos que $k \in \mathcal{O}(1)$, lo que implicaría que
+\begin{eqnarray*}
+  k \cdot \log n \approx \log n &\Rightarrow& \mathcal{O}(n + k \cdot \log n) \approx \mathcal{O}(n + \log n)\\
+  &\Rightarrow&  \mathcal{O}(n + \log n) = \mathcal{O}(n).
+\end{eqnarray*}
+
+\textbf{Obs.} [Acerca del orden] Se considera que tenemos un orden y que nuestro polígono
+no es regular. Sin embargo, se me hace curioso saber ¿Cómo obtenemos un orden en tiempo
+$\mathcal{O}(n)$? Sabemos que no podemos ordenar por comparaciones en menos que
+$\mathcal{O}(n\log n)$, sin embargo, en un barrido de línea no necesitamos ordenar con prioridades
+respecto a $(x,y)$ y de hecho basta con tener un orden en $x$ o en $y$. Así, podemos ordenar
+basándonos en una proyección, digamos que proyectamos cada punto al eje $X$, esto nos tomará
+$O(n)$, luego basta recorrer el eje $X$, en $\mathcal{O}(n)$, y tenemos un orden (No angular),
+este orden es suficiente para nuestro barrido de línea. La construcción de la estructura para
+el estado de la línea se hará en tiempo $\mathcal{O}(n)$, pues son $n$ puntos y nuestras consultas
+son $k \in \mathcal{O}(1)$ sobre el estado de la línea que sabemos tardan $\log n$.\newline
+
+De esta manera, nuestra complejidad queda contenida en $\mathcal{O}(n)$.
+\hfill $\lhd$

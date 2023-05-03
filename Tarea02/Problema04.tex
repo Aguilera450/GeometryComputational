@@ -1,0 +1,40 @@
+%%%%%%%%%%%%%%%%%%%% Problema02:
+\textbf{4.} Un árbol de rango en un conjunto de $n$ puntos en el plano requiere
+$\mathcal{O}(n log n)$ de almacenamiento. Uno podría reducir los requisitos de
+almacenamiento almacenando estructuras asociadas solo con un subconjunto de los
+nodos en el árbol principal.
+
+\begin{itemize}
+\item Supongamos que sólo los nodos con profundidad $0, 2, 4, 6, \dotsm$ tienen
+  una estructura asociada. Muestre cómo se puede adaptar el algoritmo de consulta
+  para responder consultas correctamente.
+\item Analice los requisitos de almacenamiento y el tiempo de consulta de dicha
+  estructura de datos.
+\end{itemize}
+
+$\rhd$ \textbf{Solución:} Para este problema dividamos la solución en dos posibles
+opciones:
+\begin{enumerate}
+\item ¿Cómo adaptamos nuestro árbol de rangos para que cumpla lo requerido en el primer
+  punto? Como sabemos que un árbol, al menos, tendrá una raíz y las estructuras estarán
+  ``colgadas'' de niveles pares. Entonces, la información respecto de $Y$ de los niveles
+  impares estarán contenidas en el árbol colgado en su nivel par, inmediato, anterior.
+  \newline
+  
+  Así, las consultas para los niveles pares se quedan exactamente iguales. Para los niveles
+  impares consultamos respecto de $X$ y hacemos ``bracktraking'' al nivel par, inmediato,
+  anterior para terminar la consulta en la estructura colgada en el nodo de ese nivel.
+\item \textit{Análisis de almacenamiento.} El almacenamiento, aunque a primera vista se reduce
+  en la cantidad de niveles pares, realmente las estructuras que estaban colgadas en estos niveles
+  ahora formarán parte de las estructuras en niveles pares. El ahorro de almacenamiento es $\mathcal{O}(1)$,
+  pues solo nos ahorramos las raíces de los niveles impares (que son, normalmente, hojas de los niveles
+  pares).\newline
+  
+  \textit{Análisis de tiempo de consulta.} El tiempo de consulta para un elemento en un nivel par es el mismo,
+  para un elemento en un nivel impar es el mismo en términos globales, pues el ``backtraking'' lo realizamos
+  en tiempo $\mathcal{O}(1)$ y la consulta en la estructura ``colgada'' sigue siendo $\mathcal{O}(\log n) + k$.
+  Como la consulta en árbol respecto a $X$ (árbol grande) es $\mathcal{O}(\log n)$, concluimos una
+  complejidad de consulta en $\mathcal{O}(\log^2 n)$
+\end{enumerate}
+
+\hfill $\lhd$

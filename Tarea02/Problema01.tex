@@ -1,0 +1,101 @@
+%%%%%%%%%%%%%%%%%%%% Problema01:
+\textbf{1.} Sea $P$ un polígono convexo de $n$ vértices.
+Suponga que los vértices de $P$ son dados en un arreglo
+ordenado. Muestra que, dado unpunto $q$, podemos detectar
+si $q \in P$ en tiempo $\mathcal{O}(\log n)$.
+
+\begin{proof}
+  Exhibamos un algoritmo en tiempo $\mathcal{O}(\log n)$
+  para encontrar que $q \in P$. Esto lo podemos hacer
+  de varias maneras, en partícular podemos usar una de
+  las estructuras de datos vistas en clase o podemos
+  usar una técnica basa en búsqueda binaria. Por simplicidad
+  usaré la técnica basada en búsqueda binaria, a continuación
+  se muestra el algoritmo deseado:
+  \begin{enumerate}
+  \item Encontremos el extremo ``más alto'' (digamos $a$) y
+    ``más bajo'' (digamos $b$) en $P$ en $\mathcal{O}(1)$,
+    pues tenemos los puntos ordenados en un arreglo.
+  \item Verificamor que $b.y \leq q.y \leq a.y$ en $\mathcal{O}(1)$.
+    Si la condición anterior se cumple, entonces seguimos con
+    el algoritmo. Si no se cumple la condición anterior, entonces
+    concluimos que $q$ no se encuentra destro de $P$.
+  \item Ahora tracemos una recta $\ell$ a partir de $q$ tal que intersecte al
+    polígono $P$ respecto a una proyección, digamos la proyección hacia la izquierda.
+    Ahora, tendremos tres posibles opciones:
+    \begin{enumerate}
+    \item $\ell$ intersecta en $0$ puntos (Caso análogo a $2$). Entonces $q \notin P$.
+    \item $\ell$ intersecta en $2$ puntos (Caso análogo a $1$). Entonces $q \notin P$.
+    \item $\ell$ intersecta en $1$ punto, entonces $q \in P$.
+    \end{enumerate}
+  \end{enumerate}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURE 1
+  \begin{figure}[ht!]
+    \centering
+    \begin{tikzpicture}[scale=0.70]
+      %%%%%%%%%%%% Caso (a)
+      \node(0) [blueV, label=150:$v_{1}$] at (0, 0){};
+      \node(1) [blueV, label=180:$v_{2}$] at (2, 3){};
+      \node(2) [blueV, label=150:$v_{3}$] at (-0.22, 5.83){};
+      \node(3) [blueV, label=150:$v_{4}$] at (-3.6, 4.57){};
+      \node(4) [blueV, label=150:$v_{5}$] at (-3.46, 0.99){};
+      \node(5) [redV, label=150:$q$] at (-4, 2){};
+      \draw[edge] (0) to (1);
+      \draw[edge] (1) to (2);
+      \draw[edge] (2) to (3);
+      \draw[edge] (3) to (4); 
+      \draw[edge] (4) to (0);
+      \draw[edgeDotted] (5) to (-5,2);
+      \draw[edge] (-5, -1) to (-5, 6);
+      \node (L) at (-3,6){Caso (a)};
+      %%%%%%%%%%%% Caso (b)      
+      \begin{scope}[xshift=10cm]
+        \node(0) [blueV, label=150:$v_{1}$] at (0, 0){};
+        \node(1) [blueV, label=180:$v_{2}$] at (2, 3){};
+        \node(2) [blueV, label=150:$v_{3}$] at (-0.22, 5.83){};
+        \node(3) [blueV, label=150:$v_{4}$] at (-3.6, 4.57){};
+        \node(4) [blueV, label=150:$v_{5}$] at (-3.46, 0.99){};
+        \node(5) [redV, label=150:$q$] at (2.3, 2){};
+        \draw[edge] (0) to (1);
+        \draw[edge] (1) to (2);
+        \draw[edge] (2) to (3);
+        \draw[edge] (3) to (4); 
+        \draw[edge] (4) to (0);
+        \draw[edgeDotted] (5) to (-5,2);
+        \draw[edge] (-5, -1) to (-5, 6);
+        \node (L) at (-3,6){Caso (b)};
+      \end{scope}
+    \end{tikzpicture}
+    %%%%%%%%%%%% Caso (c)
+    \begin{tikzpicture}[scale=0.70]
+      \node(0) [blueV, label=150:$v_{1}$] at (0, 0){};
+      \node(1) [blueV, label=180:$v_{2}$] at (2, 3){};
+      \node(2) [blueV, label=150:$v_{3}$] at (-0.22, 5.83){};
+      \node(3) [blueV, label=150:$v_{4}$] at (-3.6, 4.57){};
+      \node(4) [blueV, label=150:$v_{5}$] at (-3.46, 0.99){};
+      \node(5) [redV, label=150:$q$] at (0, 2){};
+      \draw[edge] (0) to (1);
+      \draw[edge] (1) to (2);
+      \draw[edge] (2) to (3);
+      \draw[edge] (3) to (4); 
+      \draw[edge] (4) to (0);
+      \draw[edgeDotted] (5) to (-5,2);
+      \draw[edge] (-5, -1) to (-5, 6);
+      \node (L) at (-3,6){Caso (c)};
+    \end{tikzpicture}
+  \end{figure}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \textbf{Obs.} Encontrar $q$ respecto a los puntos de $P$ se realiza en $\mathcal{O}(\log n)$.
+  Producir las recta y encontrar las intersecciones lo realizamos en $\mathcal{O}(1)$. \newline
+  
+  ¿Por qué será cierto que lo anterior es suficiente? R./ Sabemos que $P$ es convexo,
+  entonces toda línea trazada puede cortar a $P$ en a lo más $2$ puntos. Además, como
+  la proyección siempre es a la izquierda podemos tomar como referencia los puntos de
+  corte respecto al polígono\footnote{Es simple plantear un pequeño sistemas de ecuación que
+  me indique en cuántos puntos se corta respecto a $\ell$, todo esto en $\mathcal{O}(1)$.}.
+  En otro caso, podemos considerar una orientación distinta para la línea en la que proyectaremos
+  $\ell$.\newline
+  
+  \textit{Análisis de Complejidad.} La complejidad del algoritmo esta contenida en
+  \[\mathcal{O}(1) + \mathcal{O}(\log n) \in \mathcal{O}(\log n)\]
+\end{proof}
