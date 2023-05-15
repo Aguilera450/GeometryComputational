@@ -1,0 +1,27 @@
+%%%%%%%%%%%%%%%%%%%% Problema07:
+\textbf{8.} Sea S un conjunto de $n$ puntos en el plano y $A$ una subdivisión plana con $\mathcal{O}(n)$
+regiones:
+\begin{itemize}
+\item Muestra que toma $\mathcal{O}(n \log n)$ localizar los puntos de $S$ en $A$.
+\item Sea $T$ una triangulación de $S$, ¿cómo podría ayudar esta información para
+localizar los puntos de $S$ en $A$? Muestra que a pesar de tener la triangulación
+de $S$, la cota sigue siendo logarítmica.
+\end{itemize}
+
+\begin{proof}
+  Para probar los incisos anteriores basta exhibir un algoritmo que encuentre los puntos
+  requeridos en $\mathcal{O}(n \log n)$. A continuación se solucionan los incisos anteriores,
+  esto es
+  \begin{itemize}
+  \item Usando el algoritmo de David Kirkpatrik visto en clase, podemos calcular la localización
+    de cada uno de los puntos. Localizar un punto por medio de este algoritmo nos toma $\mathcal{O}(\log n)$,
+    cómo buscamos localizar $n$ puntos, entonces tenemos que aplicar este algoritmo $n$ veces. Así,
+    localizar la región de $A$ en la que esta contenido cada punto nos cuesta $\mathcal{O}(n \log n)$.
+  \item Tener una triangulación en los puntos nos ayudaría a ahorrar algunas subdivisiones, sin embargo,
+    habría que verificar que nuestra subdivisión $A$ más $T$ siga siendo plana, por lo que no necesariamente
+    ahorramos complejidad. Incluso, si ahorraramos complejidad esta sería pequeña, de hecho sería de tamaño
+    constante y nuestro algoritmo seguiría necesitando de $\mathcal{O}(n \log n)$ para localizar todos
+    los puntos, pues los demás pasos se siguen teniendo (ir quitando los de vértices de menor grado $< 8$
+    e ir retriangulando, luego regresarnos por medio de nuestro árbol).
+  \end{itemize}
+\end{proof}

@@ -1,0 +1,38 @@
+%%%%%%%%%%%%%%%%%%%% Problema07:
+\textbf{7.} Da un algoritmo que calcule en tiempo $O(n \log n)$ una diagonal que divida un
+polígono simple con $n$ vértices en dos polígonos simples cada uno con a lo más
+$\lfloor \frac{2n}{3} \rfloor + 2$ vártices. \textbf{Hint}: Usa la gráfica dual de la triangulación.
+\newline
+
+$\rhd$ \textbf{Solución:} A continuación se exhibe un algoritmos que resuelve este problema
+\begin{enumerate}
+\item Obntener la triangulación de nuestro polígono. Esto lo realizamos en $\mathcal{O}(n \log n)$
+  con el algoritmo visto en clase.
+\item Sabemos que toda triangulación tiene $n - 3$ aristas y por tanto nuestra gráfica dual que
+  se formará a partir de cada arista interna será de un orden $\mathcal{O}(n)$. Entonces, la
+  construcción de la gráfica dual nos toma $\mathcal{O}(n)$. Además, la gráfica dual es un árbol.
+\item Encontramos los puntos más lejanos en una gráfica. Esto, por algoritmos $I$ sabemos que
+  lo podemos hacer en $\mathcal{O}(n)$ para un árbol. La técnica se basa en ``colgar'' el árbol
+  por medio de un recorrido a profundidad desde la raíz hasta la hoja de mayor profundidad y
+  tomar esa hoja como la nueva raíz y volver a recorrer hasta la hoja más profunda.
+\item  Recorrer la gráfica dual iniciando desde cada uno de los puntos más lejanos. Eligimos una
+  orientación y siempre seguimos esta orientación (La orientación, la podemos tener con DCEL) para
+  el reccorido. Así evitaremos dividir el polígono en más de $2$ polígonos nuevos. Esto lo hacemos
+  en $\mathcal{O}(n)$, pues el orden de las aristas de nuestra gráfica dual es lineal.
+\item Durante cada recorrido colorearemos los vértices del triángulo en el que estemos, todos
+  del mismo color. En el momento que hayamos coloreado, exactamente $\lfloor \frac{2n}{3} \rfloor + 2$
+  vértices. Entonces regresamos la arista $e_T$ de la triangulación por la que fue creada la arista
+  siguiente a la última hasta haber coloreado los  $\lfloor \frac{2n}{3} \rfloor + 2$ vértices.
+  Esto lo hacemos en $3 \cdot \left( \lfloor \frac{2n}{3} \rfloor + 2\right)$ pasos que obedece
+  a un orden líneal.\newline
+  
+  ¿Con cuál recorrido nos quedamos? Con el que llegue primero a colorear los $\lfloor \frac{2n}{3} \rfloor + 2$
+  vértices y cumpla que la arista divide al polígono en las características deseadas.\newline
+
+  \textbf{Obs.} Podríamos hacer una versión con $\lfloor \frac{n}{3} \rfloor - 2$ tomandolo por cota.
+\end{enumerate}
+Al final, $e_T$ es la diagonal búscada.\newline
+
+\textit{Análisis de la complejidad.} La complejidad del algoritmo esta contenida en
+\[\mathcal{O}(n \log n) + \mathcal{O}(n) = \mathcal{O}(n \log n).\]
+\hfill $\lhd$

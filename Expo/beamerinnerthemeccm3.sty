@@ -1,0 +1,55 @@
+%Tema para beamer "CCM3" versión 1
+%Desarrollo por Erick David Luna Núñez y 
+%Fernanda Barajas Hernandez
+
+\mode<presentation>
+
+\setbeamertemplate{background}{
+    \includegraphics[width=\paperwidth]{images/FONDO AL 10.png}
+}
+
+\setbeamerfont{date}{size=\small, shape=\upshape}
+\setbeamerfont{title}{size=\Huge}
+\setbeamerfont{author}{size=\small, shape=\upshape}
+\setbeamerfont{institute}{size=\scriptsize, shape=\itshape}
+
+%Acá va el título
+\defbeamertemplate*{title page}{CCM3}[1][]
+{
+    \begin{textblock}{4}(7,1)
+    \includegraphics[width=2cm]{\logoccm}
+  \end{textblock}
+
+    \vspace*{3.2cm}
+  
+  
+    \begin{beamercolorbox}[center,wd=\paperwidth,sep=1pt]{title page header}
+      \usebeamerfont{title}{\setstretch{1.1} \scalefont{1.5} \inserttitle}\par%
+    \end{beamercolorbox}
+    
+    \vspace*{0.01cm}
+    
+    \begin{beamercolorbox}[center,wd=\paperwidth]{date}
+	\usebeamerfont{date}\insertdate%
+    \end{beamercolorbox}
+  
+  
+  \vspace*{\fill}
+   \vspace*{1cm}
+  \begin{beamercolorbox}[center,wd=\the\paperwidth]{author}
+    {\usebeamerfont{author} \insertauthor}%
+  \end{beamercolorbox}
+  
+  \begin{beamercolorbox}[center,wd=\the\paperwidth]{institute}
+    {\usebeamerfont{institute}\insertinstitute}
+  \end{beamercolorbox}
+}
+
+%A definir la apareciencia de listas y tabla de contenidos
+\setbeamertemplate{items}[circle]
+\setbeamercolor{section in toc}{fg=black}
+\setbeamertemplate{section in toc}{{\Huge \color{mostazaccm} \oldstylenums{\inserttocsectionnumber}.}~\inserttocsection}
+\setbeamercolor{subsection in toc}{fg=gray}
+\setbeamertemplate{subsection in toc}{\hspace{1.45em}{\color{gray}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
+
+\mode<all>

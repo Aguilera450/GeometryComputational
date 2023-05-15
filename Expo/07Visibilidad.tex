@@ -1,0 +1,59 @@
+
+\begin{frame}
+  \frametitle{El problema.}
+  \begin{teorema}
+    Para cualquier polígono simple con $n$ vértices
+    \[int(P) + ext(P) \geq \lceil \frac{3n - 1}{2} \rceil - 4.\]
+  \end{teorema}
+  \textbf{Dem.} Supongamos que $P$ tiene $k$ vértices internos. Obtengamos una
+  partición en $k + 1$ polígonos convexos. Para cada $m_i \geq 4$ tómese una arista
+  de visibilidad estrictamente interna $e_i$ de $P_i'$.\newline
+
+  *Es fácil ver que siempre existe una triangulación $T$ de $P$ que contiene a todas las aristas
+  estrictamente internas de $P_i'$.
+\end{frame}
+
+\begin{frame}
+  \frametitle{El problema.}
+  Ahora, probemos que $int(P) \geq 2n - 2k - 6.$ Para cada $m_i \geq 4$, se tiene que $e_i$ se intersecta
+  por lo menos con $m_i - 3$ aristas estrictamente internas de $P_i'$. *Si $e_i \in T_{P}$ entonces las
+  aristas anteriores no pertenecen a $T$ (las triangulaciones son planas y simples). Como estas aristas
+  son estrictamente internas de $P$, tenemos que
+  \begin{eqnarray*}
+    int(P) \geq (n - 3) + \sum_{m_i \geq 4} (m_i - 3) \geq (n - 3) + \sum_{i \in [1, \dotsm, k + 1]} (m_i - 3)
+  \end{eqnarray*}
+  Observemos que
+  \begin{eqnarray*}
+    \sum_{i \in [1, \dotsm, k + 1]} (m_i - 3) = n + k - 3(k + 1) = n - 2k - 3.
+  \end{eqnarray*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{El problema.}
+  Así
+  \begin{eqnarray*}
+    int(P) \geq  (n - 3) + \sum_{i \in [1, \dotsm, k + 1]} (m_i - 3) =  n - 2k - 6.
+  \end{eqnarray*}
+  Además, sabemos que $ext(P) \geq k$. Entonces
+  \[int(P) + ext(P) \geq (n - 2k - 3) + k = n - k - 6.\]
+\end{frame}
+
+\begin{frame}
+  \frametitle{El problema.}
+  Antes habíamos probado que $int(P) + ext(P) \geq (n - 3) + k$. Por lo que, al sumar ambos resultados
+  tenemos que
+  \begin{eqnarray*}
+    2\cdot int(P) + 2 \cdot ext(P) &\geq& (n - k - 6) + (n - 3) + k\\
+    &\geq& 2n - k - 9 + k\\
+    &\geq& 2n - 9 \\
+    \Rightarrow int(P) + ext(P) &\geq& \big\lceil \frac{2n - 9}{2} \big\rceil\\
+    &\geq& \big\lceil \frac{2n - 8 - 1}{2} \big\rceil\\
+    &\geq& \big\lceil \frac{2n - 1}{2} - 4 \big\rceil\\
+    &\geq& \big\lceil \frac{2n - 1}{2}\big\rceil - 4.
+  \end{eqnarray*}
+  \hfill $\square$\newline
+
+  .\newline
+
+  .
+\end{frame}

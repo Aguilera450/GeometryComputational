@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%% Problema05:
+\textbf{5.} Se pueden utilizar las estructuras de búsqueda de rangos ortogonales para determinar
+si un punto particular $(a, b)$ está en un conjunto dado, haciendo una consulta al rango
+$[a : a] \times [b : b]$.
+\begin{enumerate}
+\item[$a$)] Prueba qué hacer una consulta así en un árbol $Kd$ toma tiempo $\mathcal{O}(\log n)$.
+\item[$b$)] ¿Cuál es la complejidad para una consulta así en un árbol de rangos?
+\end{enumerate}
+
+$\rhd$ \textbf{Solución:} Para este problema dividamos la solución en dos posibles casos:
+\begin{enumerate}
+\item[$a$)] Sabemos que hacer una consulta, en un árbol $Kd$, para un rango en
+general nos toma $\mathcal{O}(\sqrt{n} + k)$. Sin embargo, consultar un punto
+en un árbol $Kd$ sería equivalente a particionar la nuve de puntos por la mitad
+y preguntarnos en qué parte queda nuestro punto distinguido, llamemosle $q$. Así,
+descartamos aproximadamente la mitad de puntos en dónde no se encuentra $q$. Luego,
+subdividimos nuevamente el conjunto de puntos restantes en $2$ y nos preguntamos
+en qué parte se encuentra $q$ y podemos descartar la parte en la que no se encuentre.
+De esta manera y recursivamente nuestro espacio de búsqueda se reduce a la mitad cada
+vez, esto equivale hacer un recorrido de la raíz de nuestro árbol $kd$ hacia las hojas
+en búsca del punto $q$. Como cada vez descontamos la mitad del conjunto de puntos
+de búsqueda, tenemos la recurrencia $T(n) = 2T(n - 1)$ que sabemos que nos genera
+un orden logarítmico en base 2. Cómo el número de consultas es igual a $1$, entonces
+$k = 1 \in \mathcal{O}(1)$. Por tanto, la complejidad de esta consulta es
+$\mathcal{O}(\log n)$.
+\item[$b$)] En este caso, tenemos una complejidad general de $\mathcal{O}(\log^2 n + k)$,
+cómo solo estamos consultando un punto y no un rango, entonces $k = 1 \in \mathcal{O}(1)$.
+En la consulta debemos bajar por el árbol hasta encontrar $q.X$ y bajar su árbol ``colgado''
+o su árbol asociado en $y$, hacer esto es igual a $\log m$ dónde $m$ es la altura del árbol
+asociado con $m \not= n$, pues cada nivel y nodo tiene un árbol compacto de tamaño constante.
+Por tanto, la complejidad esta contenida en $\mathcal{O}(\log m \cdot \log n) = \mathcal{O}(\log n)$
+con $m$ constante respecto de $n$.
+
+\end{enumerate}
+\hfill $\lhd$

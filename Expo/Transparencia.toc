@@ -1,0 +1,13 @@
+\babel@toc {spanish}{}
+\beamer@sectionintoc {1}{Introducción}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Iluminación y Visualización.}{3}{0}{1}
+\beamer@sectionintoc {2}{Iluminando Polígonos Ortogonales.}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Antecedentes.}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Lámparas suficientes para iluminar polígonos ortogonales.}{10}{0}{2}
+\beamer@sectionintoc {3}{El problema de los Tres Reflectores.}{17}{0}{3}
+\beamer@subsectionintoc {3}{1}{Colocando reflectores.}{17}{0}{3}
+\beamer@sectionintoc {4}{El número de aristas de visibilidad de un polígono.}{47}{0}{4}
+\beamer@subsectionintoc {4}{1}{Antecedentes.}{47}{0}{4}
+\beamer@subsectionintoc {4}{2}{Contando aristas.}{56}{0}{4}
+\beamer@sectionintoc {5}{Un Problema de Espejos.}{60}{0}{5}
+\beamer@sectionintoc {6}{Fin.}{63}{0}{6}

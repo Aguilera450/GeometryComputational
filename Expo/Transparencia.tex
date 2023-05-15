@@ -1,0 +1,121 @@
+%Tema para beamer "CCM3" versión 1
+%Desarrollo por Erick David Luna Núñez y 
+%Fernanda Barajas Hernandez
+
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{heuristica}
+\usepackage[T1]{fontenc}
+\usepackage[heuristica,vvarbb,bigdelims]{newtxmath}
+\renewcommand*\oldstylenums[1]{\textosf{#1}}
+\usepackage[sfdefault,scaled=.85]{FiraSans}
+\usepackage{graphicx}
+\usepackage[spanish]{babel} 
+\usepackage[pages=some]{background}
+\pagenumbering{arabic}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Include Figure
+\usepackage{graphicx}
+%\usepackage{figure}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+%%Se define el "environment" teorema
+\newtheorem{teorema}{Teorema}
+% Proof
+\renewcommand*{\proofname}{\textbf{Demostraci\'on:}}
+% Lemma
+\newtheorem{lema}{Lema}
+
+% Conjetura
+\newtheorem{conjetura}{Conjetura}
+
+%Definir el autor con el estilo definido (el textbf y el uso del color son herramientas del diseño, no necesario borrar)
+\title{\Large {Geometría Computacional}\\ {\color{mostazaccm} \textbf{Problemas de iluminación y visualización.}}}
+
+%Nombre del autor
+\author{Adrián Aguilera Moreno.} 
+
+%Fecha o evento en que se presentará la plática
+\date{\\\textbf{Profesores:}
+  \\ {Adriana Ramírez Vigueras}
+  \\ {Marco Antonio Velasco Flores}
+  \\ {Fhernanda Montserrat Romo Olea}} 
+
+%correo del expositor o incluir posibles colaboradores
+\institute{aguilera@ciencias.unam.mx} 
+
+
+%%Tema de beamer "CCM-3"
+\usetheme{ccm3}
+
+\begin{document}
+%Define el fondo de la primer diapositiva
+{\setbeamertemplate{background}{
+\includegraphics[width=\the\paperwidth,height=\the\paperheight]{images/P3.png}}
+%lo anterior es para definir el fondo de la primer diapositiva
+
+\begin{frame}
+  \titlepage %Necesario para generar la portada
+\end{frame}
+
+} %aquí termina el cambio de fondo
+
+\begin{frame}
+\tableofcontents %Imprime la tabla de contenido
+\end{frame}
+
+\section{Introducción} %%Título de la sección (Opcional)
+\subsection{Iluminación y Visualización.}
+\input{./01Introduccion}
+
+
+\section{Iluminando Polígonos Ortogonales.}
+\subsection{Antecedentes.}
+\input{./02Ortogonales}
+\subsection{Lámparas suficientes para iluminar polígonos ortogonales.}
+\input{./03Ortogonales}
+
+\section{El problema de los Tres Reflectores.} %%Otra sección
+\subsection{Colocando reflectores.}
+\input{./04Reflectores}
+\input{./05Reflectores}
+
+
+\section{El número de aristas de visibilidad de un polígono.}
+\subsection{Antecedentes.}
+\input{./06Visibilidad}
+\subsection{Contando aristas.}
+\input{./07Visibilidad}
+
+
+\section{Un Problema de Espejos.}
+\input{./08Espejos}
+
+\section{Fin.}
+%\begin{frame}{Referencias}
+    %posibles estilos para bibliografía: unsrt , siam , plain , ieeetr , alpha , acm , abbrv
+%    \bibliographystyle{apalike}
+%  \bibliography{references}
+%\end{frame}
+
+
+\begin{frame}{Gracias}
+  \begin{figure}
+    \centering
+    \includegraphics[width=.35 \paperwidth]{./images/Agradecimientos.png}
+    %\caption*{.}
+  \end{figure}
+
+%  \begin{figure}
+%    \centering
+%    \includegraphics[width=.25 \paperwidth]{./images/Fin.jpg}
+    %\caption*{.}
+%  \end{figure}
+\end{frame}
+
+\end{document}
